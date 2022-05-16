@@ -1,0 +1,43 @@
+.inputWrapper {
+    width: 100%;
+    min-width: 20rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: .25rem;
+    background-color: #00000032;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        label {
+            font-size: 0.75rem;
+            font-weight: 400;
+            line-height: 1rem;
+        }
+
+        input {
+            display: flex;
+            width: 100%;
+            border: 0;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            font-weight: 400;
+            background: transparent;
+            color: white;
+
+            &:focus {
+                outline: 0;
+            }
+        }
+    }
+
+    &:focus-within {
+        outline: 1px solid white;
+    }
+}

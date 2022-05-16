@@ -1,20 +1,50 @@
 import { BrowserRouter, Navigate, Route, Routes, useLocation } from "react-router-dom"
 import { useAuth } from "./hooks/useAuth"
-import { Home } from "./pages/Home"
+import { BookModal } from "./pages/bookModal"
+import { Books } from "./pages/books"
 import { Login } from "./pages/login"
+import api from "./services/api"
+
+type Book = {
+    id: string,
+    title: string,
+    description: string,
+    authors: string[],
+    pageCount: number,
+    category: string,
+    imageUrl: string,
+    isbn10: string,
+    isbn13: string,
+    language: string,
+    publisher: string,
+    published: number
+}
 
 export const Router = () => {
+    const location = useLocation()
+
+    const state = location.state as {backgroundLocation?: Location, selectedBook?: Book}
+
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route path='/' element={
+        <div>
+             {/* <BrowserRouter> */}
+            <Routes location={state?.backgroundLocation || location}>
+                <Route path='/' element={<Login />} />
+                <Route path='/books' element={
                     <RequireAuth>
-                        <Home />
+                        <Books />
                     </RequireAuth>
-                } />
-                <Route path='/login' element={<Login />} />
+                }>
+                </Route>
             </Routes>
-        </BrowserRouter>
+        {/* // </BrowserRouter> */}
+            
+            {state?.backgroundLocation && (
+                <Routes>
+                    <Route path="/books/:bookId" element={<BookModal book={state?.selectedBook} />} />
+                </Routes>
+            )}
+        </div>
     )
 }
 
@@ -23,8 +53,10 @@ const RequireAuth = ({ children }: {children: JSX.Element}) => {
     const location = useLocation()
 
     if(!user) {
-        return <Navigate to='/login' state={{ from: location }} replace />
+        return <Navigate to='/' state={{ from: location }} replace />
     }
+
+    
     
     return children
 }

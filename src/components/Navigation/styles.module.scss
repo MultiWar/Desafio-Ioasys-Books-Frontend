@@ -1,0 +1,16 @@
+.navContainer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    span {
+        font-size: 0.75rem;
+        line-height: 1.25rem;
+        color: #333;
+        font-weight: 400;
+
+        > strong {
+            font-weight: 500;
+        }
+    }
+}

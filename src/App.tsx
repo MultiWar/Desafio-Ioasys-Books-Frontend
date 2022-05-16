@@ -1,16 +1,16 @@
 import React from 'react';
-import { CookiesProvider } from 'react-cookie';
-import './App.css';
+import { BrowserRouter } from 'react-router-dom';
 import { AuthContextProvider } from './contexts/AuthContext';
 import { Router } from './Routes';
 
 function App() {
+
     return (
-        <CookiesProvider>
-            <AuthContextProvider>
+        <AuthContextProvider>
+            <BrowserRouter>
                 <Router />
-            </AuthContextProvider>
-        </CookiesProvider>
+            </BrowserRouter>
+        </AuthContextProvider>
     );
 }
 

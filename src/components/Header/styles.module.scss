@@ -1,0 +1,38 @@
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    > div {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        &:first-child {
+            > span {
+                font-size: 1.75rem;
+                font-weight: 300;
+                line-height: 2.5rem;
+                color: #333;
+            }
+        }
+
+        &:last-child {
+            > span {
+                font-size: 0.75rem;
+                font-weight: 400;
+                color: #333;
+                line-height: 1rem;
+
+                > strong {
+                    font-weight: 500;
+                }
+
+                @media(max-width: 500px) {
+                    display: none;
+                }
+            }
+        }
+    }
+}

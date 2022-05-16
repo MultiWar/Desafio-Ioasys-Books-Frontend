@@ -1,0 +1,20 @@
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: min-content;
+    padding: .25rem 1rem;
+    border-radius: 2rem;
+    border: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    background-color: #fff;
+    color: #B22E6F;
+    cursor: pointer;
+
+    &:hover {
+        filter: brightness(0.8);
+    }
+}

@@ -1,9 +1,9 @@
-import { createContext, ReactNode, useState } from "react"
-import { useClearCookies, useSetUserCookie } from "../hooks/useManageCookies"
+import React, { createContext, ReactNode, useEffect, useState } from "react"
 import api from "../services/api"
 
 type User = {
     name: string,
+    accessToken: string
 }
 
 type SignInProps = {
@@ -13,32 +13,40 @@ type SignInProps = {
 
 type AuthContextType = {
     user: User | undefined,
-    signIn: (props: SignInProps, callback?: VoidFunction) => Promise<void>,
-    signOut: (callback: VoidFunction) => void
+    setUser: React.Dispatch<React.SetStateAction<User>>,
+    signIn: (props: SignInProps) => Promise<void>,
+    signOut: () => void
 }
 
 export const AuthContext = createContext({} as AuthContextType)
 
 export const AuthContextProvider = ({ children }: {children: ReactNode}) => {
-    const [user, setUser] = useState<User>()
+    const [user, setUser] = useState<User>(JSON.parse(localStorage.getItem('Ioasys_Books-loggedUser')))
+
+    useEffect(() => {
+        api.defaults.headers.common['Authorization'] = `Bearer ${JSON.parse(localStorage.getItem('Ioasys_Books-loggedUser'))?.accessToken}`
+    }, [user])
     
-    async function signIn({email, password}: SignInProps, callback: VoidFunction = () => {}) {
-        const { data, status } = await api.post('/auth/sign-in', { email, password })
+    async function signIn({email, password}: SignInProps) {
+        const { data, status, headers } = await api.post('/auth/sign-in', { email, password })
         if(status !== 200) {
             throw new Error('Email e/ou senha incorretos.')
         }
 
-        setUser({ name: data.name })
-        useSetUserCookie(data.name, data.accessToken)
+        setUser({ name: data.name, accessToken: headers['authorization'] })
+
+        localStorage.setItem('Ioasys_Books-loggedUser', JSON.stringify({name: data.name, accessToken: headers['authorization']}))
+        
+        api.defaults.headers.common['Authorization'] = `Bearer ${headers['authorization']}`
     }
 
-    function signOut(callback: VoidFunction) {
+    function signOut() {
         setUser(undefined)
-        useClearCookies()
+        localStorage.removeItem('Ioasys_Books-loggedUser')
     }
     
     return (
-        <AuthContext.Provider value={{user, signIn, signOut}}>
+        <AuthContext.Provider value={{user, setUser, signIn, signOut}}>
             {children}
         </AuthContext.Provider> 
     )

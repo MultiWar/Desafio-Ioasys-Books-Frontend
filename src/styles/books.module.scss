@@ -1,0 +1,26 @@
+.container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 3rem 8rem;
+    background-image: url('../assets/books-background-image.png');
+    background-size: cover;
+
+    > footer {
+        width: 100%;
+        display: flex;
+        justify-content: end;
+        margin-top: 1rem;
+    }
+
+    @media(max-width: 850px) {
+        padding: 3rem 1rem;
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+    gap: 1rem;
+    margin-top: 3rem;
+    justify-items: center;
+}

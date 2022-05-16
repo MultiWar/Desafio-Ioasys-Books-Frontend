@@ -1,0 +1,15 @@
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 1px solid rgba(51, 51, 51, 0.2);
+    background: transparent;
+    cursor: pointer;
+
+    &:hover {
+        filter: brightness(0.9)
+    }
+}
