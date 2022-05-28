@@ -1,46 +1,49 @@
-# Getting Started with Create React App
+# O que é este repositório?
+Este repositório é a minha resolução do desafio Frontend da Ioasys.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Quais foram as instruções usadas como base para fazer o desafio?
+Estas foram as instruções:
 
-## Available Scripts
+![Screenshot_1004](https://user-images.githubusercontent.com/54380823/170839986-de2fdffc-9ffc-4cb9-b26e-dabe91ef7815.png)
+![Screenshot_1005](https://user-images.githubusercontent.com/54380823/170840001-5602ab68-0be8-4521-8f6c-f6dcae25913f.png)
 
-In the project directory, you can run:
+Além destas instruções, havia o link pra API, o link pra sua documentação e o link pros designs no Figma
 
-### `yarn start`
+# Como ficou o resultado final?
+É possível fazer alguns ajustes para ficar mais próximo do design, e os farei, mas foi entregue assim (a primeira imagem é sempre a do design do Figma e a segunda é a da minha aplicação):
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Login
+### Desktop
+![image](https://user-images.githubusercontent.com/54380823/170840237-3e79758f-602f-4569-9708-cf0ae77c8ca8.png)
+![Screenshot_1007](https://user-images.githubusercontent.com/54380823/170840355-07a97f42-00a8-4e00-aab0-9d228f2b2a40.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Mobile
+![image](https://user-images.githubusercontent.com/54380823/170840382-d81cbd6b-0c79-4bac-a8fa-70c4684dc78b.png)
+![Screenshot_1008](https://user-images.githubusercontent.com/54380823/170840446-be90d8df-6fa0-4d35-b6cb-fdc4de3fb09e.png)
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Login - Erro
+![image](https://user-images.githubusercontent.com/54380823/170840523-0e98aaf3-a380-4974-96d6-ad6808909440.png)
+![Screenshot_1009](https://user-images.githubusercontent.com/54380823/170840542-b6372cb3-6630-4d4f-afef-e97924866f1a.png)
 
-### `yarn build`
+## Home
+### Desktop
+![image](https://user-images.githubusercontent.com/54380823/170840705-39e3114f-9134-4b53-9af8-b6df9de03f2d.png)
+![Screenshot_1010](https://user-images.githubusercontent.com/54380823/170840733-9b296507-f81b-4ae0-97af-1610334927a6.png)
+O mouse não saiu no print, mas o terceiro item da terceira linha está com hover
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Mobile
+![Screenshot_1011](https://user-images.githubusercontent.com/54380823/170840787-e6729e2c-ce95-4d1b-95a4-5d4c34ae6aaa.png)
+![Screenshot_1012](https://user-images.githubusercontent.com/54380823/170840804-2f992501-9a84-4e1f-b521-8818ad2b6ed2.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Detalhes
+### Desktop
+![image](https://user-images.githubusercontent.com/54380823/170840879-144c45c9-9337-4f5a-b52f-1741b190fe83.png)
+![Screenshot_1013](https://user-images.githubusercontent.com/54380823/170840890-3720dc26-8b43-4c24-8c36-3055681a5c7a.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Mobile
+![Screenshot_1014](https://user-images.githubusercontent.com/54380823/170841052-1eb13d30-84be-41e3-95af-8b9d17be370e.png)
+![Screenshot_1015](https://user-images.githubusercontent.com/54380823/170841054-e7dd86b8-b4f5-41cc-9208-fda0e88ec6d7.png)
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Como eu rodo o projeto na minha máquina?
+Primeiramente, é necessário ter o Node instalado. Depois, basta clonar o repositório para seu computador, rodar ``npm install`` e depois ``npm start``
